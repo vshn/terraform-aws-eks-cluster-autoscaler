@@ -3,7 +3,7 @@ module "cluster_autoscaler_irsa_role" {
   version = "5.22.0"
 
   role_name                        = format("%s-cluster-autoscaler-role", var.cluster_name)
-  role_descriptionn                = format("Allows %s assume role permissions in %s", var.cluster_name, var.aws_region)
+  role_description                 = format("Allows %s assume role permissions in %s", var.cluster_name, var.region)
   attach_cluster_autoscaler_policy = true
   cluster_autoscaler_cluster_names = [var.cluster_name]
 
