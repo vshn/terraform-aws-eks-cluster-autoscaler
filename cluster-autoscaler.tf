@@ -32,7 +32,7 @@ resource "helm_release" "cluster_autoscaler" {
       "autoDiscovery" : {
         "clusterName" : var.cluster_name,
       }
-      "awsRegion" : var.aws_region
+      "awsRegion" : var.region
       "cloudProvider" : "aws"
       "extraArgs" : {
         "balance-similar-node-groups" : true,
