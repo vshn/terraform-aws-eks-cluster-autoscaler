@@ -80,6 +80,11 @@ resource "helm_release" "cluster_autoscaler" {
           "memory" : "500Mi"
         }
       }
+      "serviceMonitor" : {
+        "enabled" : var.cluster_autoscaler_servicemonitor_enabeld
+        "namespace" : "kube-system"
+        "selector" : var.cluster_autoscaler_servicemonitor_selectors
+      }
     })
   ]
 }

@@ -29,3 +29,17 @@ variable "cluster_autoscaler_helm_chart_version" {
   description = "Helm chart version for the cluster-autoscaler. See https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler for more details."
   type        = string
 }
+
+variable "cluster_autoscaler_servicemonitor_enabeld" {
+  description = "If true, creates a Prometheus Operator ServiceMonitor."
+  type        = bool
+  default     = true
+}
+
+variable "cluster_autoscaler_servicemonitor_selectors" {
+  description = "ServiceMonitor labels for prometheus operator."
+  type        = map(string)
+  default = {
+    "monitoring.syn.tools/enabled" : "true"
+  }
+}
