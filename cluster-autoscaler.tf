@@ -15,6 +15,18 @@ module "cluster_autoscaler_irsa_role" {
   }
 }
 
+resource "kubernetes_labels" "kube_system_monitoring" {
+  count = var.cluster_autoscaler_servicemonitor_enabeld ? 1 : 0
+
+  api_version = "v1"
+  kind        = "Namespace"
+  metadata {
+    name = "kube-system"
+  }
+  labels = {
+    "monitoring.syn.tools/infra" = "true"
+  }
+}
 
 resource "helm_release" "cluster_autoscaler" {
   atomic          = true
