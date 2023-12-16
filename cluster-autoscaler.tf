@@ -1,6 +1,6 @@
 module "cluster_autoscaler_irsa_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
-  version = "5.32.1"
+  version = "5.33.0"
 
   role_name                        = format("%s-cluster-autoscaler-role", var.cluster_name)
   role_description                 = format("Allows %s assume role permissions in %s", var.cluster_name, var.region)
