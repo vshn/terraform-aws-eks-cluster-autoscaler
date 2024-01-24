@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.0
+
+- Disable psp because of removed support in k8s 1.25
+
+
 ## v1.2.0
 
 - Add label to kube-system namespace if ServiceMonitor is enabled

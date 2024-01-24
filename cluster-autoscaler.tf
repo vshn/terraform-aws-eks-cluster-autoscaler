@@ -71,7 +71,6 @@ resource "helm_release" "cluster_autoscaler" {
       ]
       "rbac" : {
         "create" : true,
-        "pspEnabled" : true,
         "serviceAccount" : {
           "annotations" : {
             "eks.amazonaws.com/role-arn" : module.cluster_autoscaler_irsa_role.iam_role_arn
