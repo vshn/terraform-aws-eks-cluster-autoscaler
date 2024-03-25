@@ -1,9 +1,12 @@
 # Changelog
 
+## v1.3.2
+
+- Update terraform-aws-modules/iam/aws to v5.37.2
+
 ## v1.3.0
 
 - Disable psp because of removed support in k8s 1.25
-
 
 ## v1.2.0
 
