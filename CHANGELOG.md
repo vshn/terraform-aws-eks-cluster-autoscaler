@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.3.7
+- update terraform-aws-modules/iam/aws to v5.41.0
+
 ## v1.3.6
 - Update terraform-aws-modules/iam/aws to v5.40.0
 
@@ -13,21 +16,16 @@
 - Update terraform-aws-modules/iam/aws to v5.38.0 
 
 ## v1.3.2
-
 - Update terraform-aws-modules/iam/aws to v5.37.2
 
 ## v1.3.0
-
 - Disable psp because of removed support in k8s 1.25
 
 ## v1.2.0
-
 - Add label to kube-system namespace if ServiceMonitor is enabled
 
 ## v1.1.0
-
 - Enable ServiceMonitor for Prometheus
 
 ## v1.0.0
-
 - Initial release
