@@ -84,11 +84,11 @@ resource "helm_release" "cluster_autoscaler" {
       "resources" : {
         "limits" : {
           "cpu" : "100m",
-          "memory" : "500Mi"
+          "memory" : "250Mi"
         },
         "requests" : {
-          "cpu" : "100m",
-          "memory" : "500Mi"
+          "cpu" : "25m",
+          "memory" : "100Mi"
         }
       }
       "serviceMonitor" : {
