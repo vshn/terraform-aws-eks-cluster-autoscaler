@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.4.1
+- Update terraform-aws-modules/iam/aws to v5.44.2
+
 ## v1.4.0
 - Lower resource requests and limits
 
