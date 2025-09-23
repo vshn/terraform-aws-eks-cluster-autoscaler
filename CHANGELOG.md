@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.14.2
+- Shorten IAM role name
+
 ## v1.14.0
 - Update terraform-aws-modules/iam/aws to v6.2.1
 
