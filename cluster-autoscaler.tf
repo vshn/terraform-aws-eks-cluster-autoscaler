@@ -1,12 +1,11 @@
 module "cluster_autoscaler_irsa_role" {
-  source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
-  version = "5.60.0"
-
-  role_name                        = format("%s-cluster-autoscaler-role", var.cluster_name)
-  role_description                 = format("Allows %s assume role permissions in %s", var.cluster_name, var.region)
+  source                           = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts"
+  version                          = "6.2.1"
+  name                             = format("%s-cluster-autoscaler-role", var.cluster_name)
+  use_name_prefix                  = true
+  description                      = format("Allows %s assume role permissions in %s", var.cluster_name, var.region)
   attach_cluster_autoscaler_policy = true
   cluster_autoscaler_cluster_names = [var.cluster_name]
-
   oidc_providers = {
     ex = {
       provider_arn               = var.oidc_provider_arn
@@ -73,7 +72,7 @@ resource "helm_release" "cluster_autoscaler" {
         "create" : true,
         "serviceAccount" : {
           "annotations" : {
-            "eks.amazonaws.com/role-arn" : module.cluster_autoscaler_irsa_role.iam_role_arn
+            "eks.amazonaws.com/role-arn" : module.cluster_autoscaler_irsa_role.arn
           },
           "create" : true,
           "name" : "cluster-autoscaler",
